@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface Metrics {
@@ -59,8 +60,19 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-zinc-100 via-zinc-50 to-white px-3 py-6 dark:from-zinc-950 dark:via-zinc-900 dark:to-black sm:px-6 sm:py-10">
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-8 rounded-2xl border border-zinc-200/70 bg-white/90 p-4 shadow-xl backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-900/80 sm:gap-10 sm:p-8">
+    <div className="relative min-h-screen overflow-hidden px-3 py-6 sm:px-6 sm:py-10">
+      <Image
+        src="/media/polymarket_bg_vid.gif"
+        alt=""
+        aria-hidden="true"
+        fill
+        unoptimized
+        priority
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-zinc-950/70" aria-hidden="true" />
+
+      <main className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-8 rounded-2xl border border-zinc-200/70 bg-white/90 p-4 shadow-xl backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-900/80 sm:gap-10 sm:p-8">
         <header className="rounded-xl border border-zinc-200 bg-white/80 px-4 py-5 dark:border-zinc-800 dark:bg-zinc-900/70 sm:px-6">
           <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-zinc-100">Polymarket Dashboard</h1>
           <p className="text-zinc-600 dark:text-zinc-400 mt-2 text-base sm:text-lg">Analyze Polymarket markets and visualize key metrics to help inform your decisions.</p>
